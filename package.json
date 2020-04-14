@@ -1,41 +1,51 @@
 {
+  "name": "@enlibe/locales",
   "version": "0.1.0",
-  "name": "@damlys/ts-package-template",
+  "private": false,
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
+  },
+  "description": "A list of Country and Language Codes following ISO-639 and ISO-3166.",
+  "keywords": [
+    "language",
+    "country",
+    "locale",
+    "code",
+    "iso",
+    "iso-639",
+    "iso-3166"
+  ],
+  "author": {
+    "name": "Enlibe",
+    "email": "support@enlibe.com",
+    "url": "https://enlibe.com/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enlibe/locales.git"
   },
   "files": [
-    "dist"
+    "cjs",
+    "js",
+    "tests",
+    "ts"
   ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "cjs/index.js",
+  "types": "cjs/index.d.ts",
   "engines": {
-    "node": ">=12 <13"
+    "node": ">=6"
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "25.1.4",
-    "@types/node": "13.9.5",
-    "@typescript-eslint/eslint-plugin": "2.25.0",
-    "@typescript-eslint/parser": "2.25.0",
-    "eslint": "6.8.0",
-    "eslint-config-prettier": "6.10.1",
-    "eslint-plugin-prettier": "3.1.2",
-    "jest": "25.2.3",
-    "prettier": "2.0.2",
-    "ts-jest": "25.2.1",
-    "typescript": "3.8.3"
+    "@enlibe/ts-sdk": "0.3.0"
   },
   "scripts": {
-    "build": "rm -rf ./dist && tsc",
-    "format": "prettier --check .",
-    "format:fix": "prettier --write .",
-    "lint": "eslint './**/*.{ts,tsx}'",
-    "lint:fix": "eslint './**/*.{ts,tsx}' --fix",
-    "test:all": "jest",
-    "test:all:coverage": "rm -rf ./coverage && jest --coverage",
-    "test:all:watch": "jest --watchAll",
-    "test:unit": "jest ./tests/unit-tests",
-    "test:integration": "jest ./tests/integration-tests"
+    "build": "rm -rf ./cjs ./js && tsc && tsc --project ./tsconfig-js.json",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "jest",
+    "test:coverage": "rm -rf ./coverage && jest --coverage",
+    "test:watch": "jest --watchAll"
   }
 }

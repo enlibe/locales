@@ -1,11 +1,12 @@
 version: "3.7"
 services:
   workspace:
-    image: node:12-slim
-    user: "0"
+    image: enlibe/node-sdk:0.1.0
+    user: "1000"
     environment:
-      - GITHUB_TOKEN
+      - NODE_ENV="development"
       - NPM_TOKEN
+      - GITHUB_TOKEN
     entrypoint: []
     command: ["bash"]
     networks:
@@ -13,7 +14,7 @@ services:
     volumes:
       - type: volume
         source: npm_cache
-        target: /root/.npm
+        target: /var/cache/npm
       - type: bind
         source: .
         target: /workspace

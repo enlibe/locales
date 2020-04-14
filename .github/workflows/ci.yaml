@@ -1,35 +1,22 @@
-name: "CI"
+name: npmjs.com/package/@enlibe/locales
 on:
   push:
     branches:
-      - "master"
-    paths:
-      - "package.json"
-      - "package-lock.json"
-  pull_request:
+      - master
     paths:
       - "**"
       - "!**.md"
 jobs:
-  ci:
+  CI:
     runs-on: ubuntu-latest
     env:
+      NODE_ENV: development
+      NPM_TOKEN: "${{ secrets.NPM_TOKEN }}"
       GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-      NPM_TOKEN: ""
     steps:
       - uses: actions/checkout@v2
-      - name: "Run vulnerabilities scanning"
-        run: ./pipeline-scripts/run-vulnerabilities-scanning.sh
-      - name: "Build"
-        run: ./pipeline-scripts/build.sh
-      - name: "Run format check"
-        run: ./pipeline-scripts/run-format-check.sh
-      - name: "Run lint check"
-        run: ./pipeline-scripts/run-lint-check.sh
-      - name: "Run unit tests"
-        run: ./pipeline-scripts/run-unit-tests.sh
-      - name: "Run integration tests"
-        run: ./pipeline-scripts/run-integration-tests.sh
-      - name: "Publish"
-        if: github.event_name == 'push'
-        run: ./pipeline-scripts/publish.sh
+      - run: npm install
+      - run: npm run format:check
+      - run: npm run build
+      - run: npm run test
+#      - run: npm publish

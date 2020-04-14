@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-set -e
-
-docker-compose run --rm workspace bash -ce '
-  npm install
-  npm run build
-'

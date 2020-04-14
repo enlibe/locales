@@ -1,15 +1,16 @@
 {
-  "include": ["./src/**/*"],
+  "include": ["./ts/**/*"],
   "exclude": ["./node_modules"],
   "compilerOptions": {
-    "lib": ["es2019"],
-    "target": "es2019",
-    "strict": true,
+    "outDir": "./cjs",
     "module": "CommonJS",
     "moduleResolution": "Node",
+    "lib": ["es5"],
+    "target": "es5",
+    "strict": true,
     "esModuleInterop": true,
-    "outDir": "./dist",
+    "resolveJsonModule": true,
     "declaration": true,
-    "sourceMap": false
+    "sourceMap": true
   }
 }
