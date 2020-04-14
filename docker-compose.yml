@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  workspace:
+    image: node:12-slim
+    user: "0"
+    environment:
+      - GITHUB_TOKEN
+      - NPM_TOKEN
+    entrypoint: []
+    command: ["bash"]
+    networks:
+      - host
+    volumes:
+      - type: volume
+        source: npm_cache
+        target: /root/.npm
+      - type: bind
+        source: .
+        target: /workspace
+    working_dir: /workspace
+networks:
+  host:
+    external: true
+volumes:
+  npm_cache:
+    driver: local
+    name: global_npm_cache

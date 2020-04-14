@@ -1,0 +1,35 @@
+name: "CI"
+on:
+  push:
+    branches:
+      - "master"
+    paths:
+      - "package.json"
+      - "package-lock.json"
+  pull_request:
+    paths:
+      - "**"
+      - "!**.md"
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      NPM_TOKEN: ""
+    steps:
+      - uses: actions/checkout@v2
+      - name: "Run vulnerabilities scanning"
+        run: ./pipeline-scripts/run-vulnerabilities-scanning.sh
+      - name: "Build"
+        run: ./pipeline-scripts/build.sh
+      - name: "Run format check"
+        run: ./pipeline-scripts/run-format-check.sh
+      - name: "Run lint check"
+        run: ./pipeline-scripts/run-lint-check.sh
+      - name: "Run unit tests"
+        run: ./pipeline-scripts/run-unit-tests.sh
+      - name: "Run integration tests"
+        run: ./pipeline-scripts/run-integration-tests.sh
+      - name: "Publish"
+        if: github.event_name == 'push'
+        run: ./pipeline-scripts/publish.sh

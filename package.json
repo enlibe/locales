@@ -1,0 +1,41 @@
+{
+  "version": "0.1.0",
+  "name": "@damlys/ts-package-template",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=12 <13"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "25.1.4",
+    "@types/node": "13.9.5",
+    "@typescript-eslint/eslint-plugin": "2.25.0",
+    "@typescript-eslint/parser": "2.25.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.1",
+    "eslint-plugin-prettier": "3.1.2",
+    "jest": "25.2.3",
+    "prettier": "2.0.2",
+    "ts-jest": "25.2.1",
+    "typescript": "3.8.3"
+  },
+  "scripts": {
+    "build": "rm -rf ./dist && tsc",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "lint": "eslint './**/*.{ts,tsx}'",
+    "lint:fix": "eslint './**/*.{ts,tsx}' --fix",
+    "test:all": "jest",
+    "test:all:coverage": "rm -rf ./coverage && jest --coverage",
+    "test:all:watch": "jest --watchAll",
+    "test:unit": "jest ./tests/unit-tests",
+    "test:integration": "jest ./tests/integration-tests"
+  }
+}
