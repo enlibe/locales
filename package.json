@@ -1,0 +1,53 @@
+{
+  "name": "@enlibe/locales",
+  "version": "0.1.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "A list of country and language codes following ISO-639 and ISO-3166.",
+  "keywords": [
+    "language",
+    "country",
+    "locale",
+    "iso-639",
+    "iso-3166"
+  ],
+  "author": {
+    "name": "Enlibe",
+    "email": "hello@enlibe.com",
+    "url": "https://enlibe.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enlibe/locales.git"
+  },
+  "bugs": {
+    "url": "https://github.com/enlibe/locales/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "src",
+    "src-cjs",
+    "src-js"
+  ],
+  "main": "src-cjs/index.js",
+  "types": "src-cjs/index.d.ts",
+  "engines": {
+    "node": ">=6"
+  },
+  "devDependencies": {
+    "@enlibe/ts-sdk": "~0.6.2"
+  },
+  "scripts": {
+    "build": "rm -rf ./src-cjs ./src-js && tsc && tsc --project ./tsconfig-js.json",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint './**/*.{ts,tsx}' --fix",
+    "lint:check": "eslint './**/*.{ts,tsx}'",
+    "test": "jest",
+    "test:coverage": "rm -rf ./coverage && jest --coverage",
+    "test:watch": "jest --watchAll",
+    "version": "add-keepachangelog-header && git add ./CHANGELOG.md"
+  }
+}
