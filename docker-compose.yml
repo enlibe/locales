@@ -6,7 +6,6 @@ services:
     environment:
       - NODE_ENV="development"
       - NPM_TOKEN
-      - GITHUB_TOKEN
     entrypoint: []
     command: ["bash"]
     networks:

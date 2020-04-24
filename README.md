@@ -4,5 +4,5 @@
 - 249 `ISO 3166-1 alpha-2` country codes
 
 ```console
-$ npm install --save-dev @enlibe/locales:0.1.0
+$ npm install --save @enlibe/locales:0.1.0
 ```
