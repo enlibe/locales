@@ -3,17 +3,17 @@
 - 184 `ISO 639-1 alpha-2` language codes
 - 249 `ISO 3166-1 alpha-2` country codes
 
-## Installation
-
-```console
-$ npm install --save @enlibe/locales@~0.1.1
-```
-
-### Requirements
+## Requirements
 
 ```console
 $ node
 $ npm
+```
+
+## Installation
+
+```console
+$ npm install --save @enlibe/locales
 ```
 
 ## TypeScript API

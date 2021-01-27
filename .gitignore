@@ -1,37 +1,4 @@
 #############################
-### Workflow
-#############################
-
-/.env
-
-#############################
-### Node.js
-#############################
-
-/coverage
-/node_modules
-/npm-debug.log
-/package-lock.json
-/src-cjs
-/src-js
-
-#############################
-### Docker
-#############################
-
-/docker-compose.override.yml
-
-#############################
-### IDE
-#############################
-
-/*.code-workspace
-/*.sublime-project
-/*.sublime-workspace
-/.idea
-/.vscode
-
-#############################
 ### System
 #############################
 
@@ -42,3 +9,23 @@
 .DS_Store
 desktop.ini
 thumbs.db
+
+#############################
+### IDE
+#############################
+
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+.idea
+.vscode
+
+#############################
+### Node.js
+#############################
+
+/coverage
+/node_modules
+/npm-debug.log
+/src-cjs
+/src-js

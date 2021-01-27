@@ -1,0 +1,5 @@
+# Delivery
+
+```console
+$ npm publish
+```

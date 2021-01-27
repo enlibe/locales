@@ -4,33 +4,6 @@
 
 /coverage
 /node_modules
+/npm-debug.log
 /src-cjs
 /src-js
-
-#############################
-### VCS
-#############################
-
-/.git
-
-#############################
-### IDE
-#############################
-
-/*.code-workspace
-/*.sublime-project
-/*.sublime-workspace
-/.idea
-/.vscode
-
-#############################
-### System
-#############################
-
-*.bak
-*.swp
-*.tmp
-*~
-.DS_Store
-desktop.ini
-thumbs.db
