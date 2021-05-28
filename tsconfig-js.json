@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./src-js",
+    "outDir": "./build-js",
     "module": "ES6"
   }
 }

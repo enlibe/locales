@@ -24,8 +24,8 @@ thumbs.db
 ### Node.js
 #############################
 
+/build-cjs
+/build-js
 /coverage
 /node_modules
 /npm-debug.log
-/src-cjs
-/src-js

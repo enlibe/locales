@@ -4,6 +4,6 @@
   "exclude": ["./node_modules", "./**/*.test.*", "./**/*.spec.*"],
   "compilerOptions": {
     "rootDir": "./src",
-    "outDir": "./src-cjs"
+    "outDir": "./build-cjs"
   }
 }

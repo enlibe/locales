@@ -25,13 +25,11 @@ import { LanguageCode } from "@enlibe/locales/src";
 ## JavaScript API
 
 ```javascript
-import { LanguageCode } from "@enlibe/locales/src-js";
+import { LanguageCode } from "@enlibe/locales/build-js";
 ```
 
 ## CommonJS API
 
 ```javascript
-const { LanguageCode } = require("@enlibe/locales/src-cjs");
-// or just
 const { LanguageCode } = require("@enlibe/locales");
 ```
